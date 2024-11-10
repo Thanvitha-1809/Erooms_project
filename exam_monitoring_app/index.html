@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Welcome to the Exam Portal</h1>
+
+    <div id="homePage">
+        <button onclick="showTeacherPage()">Teacher</button>
+        <button onclick="showStudentPage()">Student</button>
+    </div>
+
+    <div id="teacherPage" style="display: none;">
+        <h2>Teacher - Schedule Exam</h2>
+        <form id="examForm">
+            <label for="question">Add Question:</label>
+            <input type="text" id="question" required><br><br>
+
+            <label>Option 1:</label>
+            <input type="text" id="option1" required><br>
+            <label>Option 2:</label>
+            <input type="text" id="option2" required><br>
+            <label>Option 3:</label>
+            <input type="text" id="option3" required><br>
+            <label>Option 4:</label>
+            <input type="text" id="option4" required><br>
+
+            <label for="correctAnswer">Correct Answer:</label>
+            <select id="correctAnswer" required>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+            </select><br><br>
+
+            <button type="button" onclick="addQuestion()">Add Question</button>
+            <button type="button" onclick="scheduleExam()">Schedule Exam</button>
+        </form>
+        <div id="scheduledMessage" style="display:none;">Exam Scheduled Successfully!</div>
+        <button onclick="showHomePage()">Back to Home</button>
+    </div>
+
+    <div id="studentPage" style="display: none;">
+        <h2>Student - Take Exam</h2>
+        <form id="examQuestions"></form>
+        <button id="submitExamButton" onclick="submitExam()">Submit Exam</button>
+        <button onclick="showHomePage()">Back to Home</button>
+    </div>
+
+    <div id="resultMessage" style="display:none;"></div>
+</body>
+</html>
